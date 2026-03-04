@@ -487,6 +487,12 @@ Crea el archivo .github/copilot-instructions.md con instrucciones para que Copil
 
 # Instrucciones para GitHub Copilot - Proyecto CFE Seguros de Vehículos
 
+## Alcance del Proyecto
+- Este proyecto se limita a dos funcionalidades: **Pólizas** y **Coberturas**
+- NO implementar autenticación, autorización ni seguridad (JWT, OAuth, etc.)
+- NO implementar otras entidades (vehículos, asegurados, reclamos, etc.) a menos que se indique explícitamente
+- Todos los datos se almacenan **en memoria** (arrays y Maps de TypeScript). No usar bases de datos externas
+
 ## Idioma
 - Todo el código, comentarios y documentación debe estar en **español**
 - Mensajes de error en español
@@ -500,18 +506,19 @@ Crea el archivo .github/copilot-instructions.md con instrucciones para que Copil
 | Framework | Express.js |
 | Arquitectura | REST API modular por funcionalidad |
 | Async | Usar async/await en todas las operaciones I/O |
-| Base de datos | Almacenamiento en memoria (arrays/Maps, sin dependencias externas) |
+| Base de datos | Almacenamiento en memoria (arrays/Maps, sin dependencias externas de BD) |
+| Seguridad | No implementar. Sin autenticación ni autorización |
 
 ## Nomenclatura
-- Interfaces y tipos: PascalCase en español (Poliza, CrearPolizaSolicitud)
-- Variables y funciones: camelCase en español (obtenerPolizas, crearPoliza)
-- Archivos: kebab-case (poliza.routes.ts, poliza.model.ts)
+- Interfaces y tipos: PascalCase en español (Poliza, Cobertura, CrearPolizaSolicitud)
+- Variables y funciones: camelCase en español (obtenerPolizas, crearCobertura)
+- Archivos: kebab-case (poliza.routes.ts, cobertura.model.ts)
 - DTOs: EntidadDto, CrearEntidadSolicitud, ActualizarEntidadSolicitud
 
 ## Manejo de Errores
-- Retornar objetos de error consistentes con código y mensaje
+- Retornar objetos de error consistentes con código y mensaje en español
 - Usar middleware de manejo de errores en Express
-- Loggear excepciones con contexto suficiente
+- No implementar manejo de errores de autenticación/autorización
 ```
 
 ---
