@@ -544,7 +544,7 @@ Crea la estructura del proyecto Node.js en la carpeta src/api:
    src/api/src/
      funcionalidades/
        polizas/
-       vehiculos/
+       coberturas/
      datos/
      middlewares/
      index.ts
@@ -562,7 +562,7 @@ npm init -y
 npm install express cors swagger-jsdoc swagger-ui-express uuid
 npm install -D typescript ts-node @types/express @types/cors @types/swagger-jsdoc @types/swagger-ui-express @types/uuid nodemon @types/node
 npx tsc --init --strict --target ES2022 --module commonjs --outDir ./dist --rootDir ./src --resolveJsonModule --esModuleInterop
-mkdir -p src/funcionalidades/polizas src/funcionalidades/vehiculos src/datos src/middlewares
+mkdir -p src/funcionalidades/polizas src/funcionalidades/coberturas src/datos src/middlewares
 ```
 
 ---
@@ -614,7 +614,7 @@ Muéstrame el plan antes de ejecutar
 @workspace Basándote en las interfaces creadas, crea el almacenamiento de datos en src/api/src/datos/:
 
 1. almacen-datos.ts — Clase que gestiona los datos en memoria usando arrays tipados:
-   - Arrays para Poliza (y Vehiculo si ya existe la interfaz)
+   - Arrays para Poliza (y Cobertura si ya existe la interfaz)
    - Métodos CRUD genéricos tipados
 
 2. datos-semilla.ts — Función pública inicializarDatosSemilla() que:
@@ -637,7 +637,7 @@ Muéstrame el plan antes de ejecutar
    - CORS habilitado para desarrollo (permitir localhost)
 
 2. Swagger/OpenAPI con swagger-jsdoc y swagger-ui-express:
-   - Título: "API de Seguros de Vehículos - CFE"
+   - Título: "API de Pólizas y Coberturas - CFE"
    - Versión: v1
    - Disponible en /api-docs
 
