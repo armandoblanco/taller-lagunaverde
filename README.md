@@ -492,7 +492,6 @@ Crea el archivo .github/copilot-instructions.md con instrucciones para que Copil
 - NO implementar autenticación, autorización ni seguridad (JWT, OAuth, etc.)
 - NO implementar otras entidades (vehículos, asegurados, reclamos, etc.) a menos que se indique explícitamente
 - Todos los datos se almacenan **en memoria** (arrays y Maps de TypeScript). No usar bases de datos externas
-- Generame datos de prueba cuando incialice mi app
 
 ## Idioma
 - Todo el código, comentarios y documentación debe estar en **español**
@@ -707,26 +706,26 @@ Abre en el navegador: `http://localhost:3000/api-docs`
 
 ---
 
-### Paso 2.8: Implementar funcionalidad de Vehículos
+### Paso 2.8: Implementar funcionalidad de Coberturas
 
 **🤖 PROMPT en Modo Plan:**
 
 ```
-Basándote en #file:docs/especificaciones/modelo-dominio.md, implementa la funcionalidad de Vehículos con Express y TypeScript.
+Basándote en #file:docs/especificaciones/modelo-dominio.md, implementa la funcionalidad de Coberturas con Express y TypeScript. Recuerda que todo se almacena en memoria (arrays/Maps), sin base de datos externa ni seguridad.
 
-Crea en src/api/src/funcionalidades/vehiculos/:
-1. vehiculo.model.ts — Interfaces con propiedades: placa, marca, modelo, anio, numeroChasis, tipoVehiculo, color
-2. vehiculo.dto.ts — DTOs correspondientes
-3. vehiculo.routes.ts — Rutas Express con Router para "/api/v1/vehiculos"
-4. Actualizar el almacén de datos con el nuevo array de vehículos
-5. Registrar app.use('/api/v1/vehiculos', vehiculoRoutes) en index.ts
+Crea en src/api/src/funcionalidades/coberturas/:
+1. cobertura.model.ts — Interfaces con propiedades: id, polizaId, nombre, tipoCobertura, montoMaximo, deducible, esObligatoria
+2. cobertura.dto.ts — DTOs correspondientes (CrearCoberturaSolicitud, ActualizarCoberturaSolicitud)
+3. cobertura.routes.ts — Rutas Express con Router para "/api/v1/coberturas"
+4. Actualizar el almacén de datos con el nuevo array de coberturas y datos semilla
+5. Registrar app.use('/api/v1/coberturas', coberturaRoutes) en index.ts
 
 Muéstrame el plan primero
 ```
 
 **✅ Verificar antes de continuar:**
 - [ ] La API compila sin errores (`npm run build`)
-- [ ] Swagger muestra endpoints de Pólizas y Vehículos
+- [ ] Swagger muestra endpoints de Pólizas y Coberturas
 - [ ] Los datos semilla se cargan al iniciar
 
 ---
