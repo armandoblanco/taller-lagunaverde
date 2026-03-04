@@ -492,6 +492,7 @@ Crea el archivo .github/copilot-instructions.md con instrucciones para que Copil
 - NO implementar autenticación, autorización ni seguridad (JWT, OAuth, etc.)
 - NO implementar otras entidades (vehículos, asegurados, reclamos, etc.) a menos que se indique explícitamente
 - Todos los datos se almacenan **en memoria** (arrays y Maps de TypeScript). No usar bases de datos externas
+- Generame datos de prueba cuando incialice mi app
 
 ## Idioma
 - Todo el código, comentarios y documentación debe estar en **español**
