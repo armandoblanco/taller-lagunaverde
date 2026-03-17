@@ -975,12 +975,12 @@ Todos los textos en español. Usa componentes standalone.
 
 ## API a consumir
 El frontend consume la API REST de Node.js:
-- GET /api/v1/polizas — listar pólizas
-- GET /api/v1/polizas/{id} — obtener póliza por ID
-- POST /api/v1/polizas — crear nueva póliza
-- PUT /api/v1/polizas/{id} — actualizar póliza
-- DELETE /api/v1/polizas/{id} — eliminar póliza
-- GET /api/v1/vehiculos — listar vehículos
+- listar pólizas
+- obtener póliza por ID
+- crear nueva póliza
+- actualizar póliza
+- eliminar póliza
+- listar vehículos
 
 ## Implementación requerida
 
@@ -990,14 +990,14 @@ El frontend consume la API REST de Node.js:
 
 ### 2. Servicio (src/app/servicios/poliza.service.ts)
 Servicio Angular inyectable con HttpClient:
-- obtenerPolizas(): Observable<Poliza[]>
-- obtenerPolizaPorId(id: string): Observable<Poliza>
-- crearPoliza(solicitud: CrearPolizaSolicitud): Observable<Poliza>
-- actualizarPoliza(id: string, solicitud: ActualizarPolizaSolicitud): Observable<Poliza>
-- eliminarPoliza(id: string): Observable<void>
+- obtenerPolizas
+- obtenerPolizaPorId
+- crearPoliza
+- actualizarPoliza
+- eliminarPoliza
 
-### 3. Servicio (src/app/servicios/vehiculo.service.ts)
-- obtenerVehiculos(): Observable<Vehiculo[]>
+### 3. Servicio 
+- obtenerVehiculos
 
 URL base desde environment.apiUrl con manejo de errores usando catchError y throwError.
 
@@ -1005,6 +1005,7 @@ URL base desde environment.apiUrl con manejo de errores usando catchError y thro
 - Reemplaza los datos mock en InicioComponent y PolizasComponent para que consuman los servicios reales
 - Mantén los estados de carga y error que ya existen
 - Usa el patrón subscribe / async pipe para los observables
+- Valiada los CORS y que todo sea funcional
 ```
 
 ---
