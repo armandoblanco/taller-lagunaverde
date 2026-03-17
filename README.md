@@ -931,23 +931,22 @@ npm install bootstrap@5
 
 Necesito que generes TODO lo siguiente en un solo paso:
 
-## 1. Estilos (src/assets/css/tema-cfe.scss)
+## 1. Estilos 
 - Variables SCSS con la paleta de colores institucional de la CFE
-- Reset CSS básico y tipografía base (Google Fonts: Montserrat y Open Sans)
-- Clases para componentes: botones, tarjetas, header, footer, tablas
+- Reset CSS básico y tipografía base
 - Animaciones para transiciones y estados de carga
 
-## 2. Layout Principal (src/app/componentes/layout/)
+## 2. Layout Principal 
 - HeaderComponent: header institucional con logo, título "Sistema de Seguros de Vehículos" y navegación con routerLink
 - FooterComponent: footer con enlaces legales, contacto y copyright "© CFE"
 - LayoutComponent: layout wrapper que use <router-outlet> para las páginas
 
-## 3. Componentes Reutilizables (src/app/componentes/compartidos/)
+## 3. Componentes Reutilizables 
 - **TarjetaPolizaComponent**: Card con número de póliza, tipo de seguro, vehículo, fechas, badge de estado con color, y botones de acción (ver, editar, eliminar). Usa @Input() para recibir datos y @Output() para emitir eventos
 - **IndicadorCargaComponent**: Spinner con mensaje personalizable via @Input()
 - **ModalConfirmacionComponent**: Modal Bootstrap para confirmar eliminación de pólizas
 
-## 4. Página de Inicio (src/app/componentes/paginas/inicio/) — ruta "/"
+## 4. Página de Inicio — ruta "/"
 - Sección hero con título y botón "Registrar Nuevo Seguro" con routerLink
 - Estadísticas destacadas (pólizas activas, vehículos asegurados)
 - Pólizas destacadas usando TarjetaPolizaComponent con datos de ejemplo
@@ -958,13 +957,6 @@ Necesito que generes TODO lo siguiente en un solo paso:
 - Botón "Nueva Póliza" que abre formulario/modal
 - Acciones por póliza: ver detalle, editar, eliminar (con confirmación)
 - Estados: carga, vacío, error con reintento
-
-## 6. Configuración
-- app.routes.ts con rutas: /, /polizas, /polizas/:id
-- app.config.ts con provideRouter y provideHttpClient
-- Importar Bootstrap 5 en angular.json y tema-cfe.scss en styles.scss
-- index.html con meta tags en español, título "Sistema de Seguros de Vehículos - CFE"
-- environment.ts con apiUrl: 'http://localhost:3000'
 
 Usa datos de ejemplo hardcodeados (mock) para todas las páginas por ahora.
 Todos los textos en español. Usa componentes standalone.
